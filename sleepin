@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title> Can I Sleep In?</title>
+    <script>
+    /* Input: Get the month, day of the week and day of the month
+        from the computer's clock.
+     * Processing: Calculate wheter it's a weekday, holiday or weekend.
+     * Output: Print "Get up!" if it's a weekday or "Sleep in." if it's
+        a holiday or weekend.
+     */
+
+     function sleep() {
+       // Create variables for dates
+       var now = new Date();
+       var month = now.getMonth();
+       var dayOfMonth = now.getDate();
+       var dayOfWeek = now.getDay();
+
+       //Decide what message goes with each day
+       var decision
+        if ((dayOfWeek == "0" || dayOfWeek == "6") || ( month == "1" && dayOfMonth == "1")
+        || (month == "7" && dayOfMonth == "4") || (month == "12" && dayOfMonth == "25")) {
+          decision = "Sleep in.";
+          }
+          else {
+            decision = "Get Up!";
+          }
+
+        //Print output
+        document.getElementById('outputDiv').innerHTML = decision;
+
+     }
+    </script>
+  </head>
+
+  <body>
+    <button type="button" onclick="sleep()">Can I Sleep In?</button><br>
+    Today you need to: <div id="outputDiv"></div>
+  </body>
+</html>
